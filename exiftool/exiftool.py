@@ -368,7 +368,7 @@ class ExifTool(object):
 		# absolute path is returned
 		self._executable = str(abs_path)
 
-		if self._logger: self._logger.info(f"Property 'executable': set to \"{abs_path}\"")
+		if self._logger: self._logger.debug(f"Property 'executable': set to \"{abs_path}\"")
 
 
 	# ----------------------------------------------------------------------------------------------------------------------
@@ -428,7 +428,7 @@ class ExifTool(object):
 
 		self._block_size = new_block_size
 
-		if self._logger: self._logger.info(f"Property 'block_size': set to \"{new_block_size}\"")
+		if self._logger: self._logger.debug(f"Property 'block_size': set to \"{new_block_size}\"")
 
 
 	# ----------------------------------------------------------------------------------------------------------------------
@@ -476,7 +476,7 @@ class ExifTool(object):
 		else:
 			raise TypeError("common_args not a list of strings")
 
-		if self._logger: self._logger.info(f"Property 'common_args': set to \"{self._common_args}\"")
+		if self._logger: self._logger.debug(f"Property 'common_args': set to \"{self._common_args}\"")
 
 
 	# ----------------------------------------------------------------------------------------------------------------------
@@ -522,7 +522,7 @@ class ExifTool(object):
 		else:
 			self._config_file = str(new_config_file)
 
-		if self._logger: self._logger.info(f"Property 'config_file': set to \"{self._config_file}\"")
+		if self._logger: self._logger.debug(f"Property 'config_file': set to \"{self._config_file}\"")
 
 
 
@@ -1048,7 +1048,7 @@ class ExifTool(object):
 		self._process.stdin.write(cmd_bytes)
 		self._process.stdin.flush()
 
-		if self._logger: self._logger.info("Method 'execute': Command sent = {}".format(cmd_params[:-1]))  # logs without the -execute (it would confuse people to include that)
+		if self._logger: self._logger.debug("Method 'execute': Command sent = {}".format(cmd_params[:-1]))  # logs without the -execute (it would confuse people to include that)
 
 
 		# ---------- read output from exiftool process until special sequences reached ----------
