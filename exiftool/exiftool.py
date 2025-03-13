@@ -863,7 +863,7 @@ class ExifTool(object):
 			self.terminate()
 			raise ExifToolVersionError(f"Error retrieving Exiftool info.  Is your Exiftool version ('exiftool -ver') >= required version ('{constants.EXIFTOOL_MINIMUM_VERSION}')?")
 
-		if self._logger: self._logger.info(f"Method 'run': Exiftool version '{self._ver}' (pid {self._process.pid}) launched with args '{proc_args}'")
+		if self._logger: self._logger.debug(f"Method 'run': Exiftool version '{self._ver}' (pid {self._process.pid}) launched with args '{proc_args}'")
 
 
 		# currently not needed... if it passes -ver check, the rest is OK
@@ -933,7 +933,7 @@ class ExifTool(object):
 		self._flag_running_false()
 
 		# TODO log / return exit status from exiftool?
-		if self._logger: self._logger.info("Method 'terminate': Exiftool terminated successfully.")
+		if self._logger: self._logger.debug("Method 'terminate': Exiftool terminated successfully.")
 
 
 
